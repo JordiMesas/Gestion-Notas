@@ -23,10 +23,9 @@ class NoteDAO {
         $idforanea = $sentencia1->fetch(PDO::FETCH_ASSOC);
         if($idforanea['id_alumno']!=$id_alumno){
             $sentencia2=$this->pdo->prepare("INSERT INTO `notas` (`id`,`nombre_de_asignatura`, `id_alumno`, `nota`) VALUES (NULL,'mates',{$id_alumno},{$notaMates}),(NULL,'fisica',{$id_alumno},{$notaFisica}),(NULL,'programacion',{$id_alumno},{$notaProgramacion});");
-            $sentencia2->execute();
-            return true;
-        }           
-         return false;           
+            $sentencia2->execute();            
+        }
+        return false;                   
             
     }
               

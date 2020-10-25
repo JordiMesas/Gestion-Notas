@@ -13,13 +13,10 @@ if (isset($_POST['mates']) && isset($_POST['fisica']) && isset($_POST['programac
     $note->setNotaProgramacion($_POST['programacion']);
     $note->setIdAlumno($_SESSION['id_alumno']);
     $noteDAO = new NoteDAO();
-    if($noteDAO->insertNote($note)){
-        header('Location: ../public/view/zona.admin.php');
-    }else{
-        header('Location: ../public/view/infoUsuario.php');
-    }
+    $noteDAO->insertNote($note);
+     
 }
-header('Location: ../public/view/zona.admin.php');
+header('Location: ../public/view/infoUsuario.php');
 
 
 

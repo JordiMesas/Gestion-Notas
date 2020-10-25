@@ -32,9 +32,7 @@
     <?php 
 require_once '../../controller/sessions/sessionInfoAlumno.php';   
 //print_r($_SESSION['infoAlumno']); 
-$alumno = $_SESSION['infoAlumno'];
-// esta variable me sirve como identificacion de a que alumno tengo que poner las notas
-$_SESSION['id_alumno'] = $alumno['id'];
+
 ?>
 
     <div class="row">
