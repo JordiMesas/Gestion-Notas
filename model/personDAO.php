@@ -45,7 +45,7 @@ class PersonDAO {
         $sentencia1->bindParam(3,$segundoApellido);
         $sentencia1->bindParam(4,$grupo);
         $sentencia1->bindParam(5,$email);
-        $sentencia1->bindParam(6,$pas);
+        $sentencia1->bindParam(6,md5($pas));
 
         $sentencia1->execute();
     }

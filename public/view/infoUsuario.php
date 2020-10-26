@@ -9,7 +9,7 @@
         font-weight: bold;
     }
 
-    .row {
+    .row{
         text-align: left;
         margin: 5%;
     }
@@ -20,8 +20,8 @@
         padding: 5px;
     }
 
-    input[type="submit"] {
-        margin-top: 5px;
+    input[type="submit"]{
+        margin-top: 7px;
     }
     </style>
     <title>Update</title>
@@ -36,6 +36,7 @@ require_once '../../controller/sessions/sessionInfoAlumno.php';
 ?>
 
     <div class="row">
+        <a href="zona.admin.php">home</a>
         <div>
             <h2>Datos del alumno</h2>
 
@@ -67,19 +68,20 @@ require_once '../../controller/sessions/sessionInfoAlumno.php';
         <h3>Notas</h3>
         <form action="../../controller/insertNotasController.php" method="POST">
             <label for="mates">Mates</label>
-            <input type="number" id="mates" name="mates" min="0" max="10">
+            <input type="number" id="mates" name="mates" min="0" max="10" required>
 
             <label for="fisica">Física</label>
-            <input type="number" id="fisica" name="fisica"min="0" max="10">
+            <input type="number" id="fisica" name="fisica"min="0" max="10" required>
 
             <label for="programacion">Programación</label>
-            <input type="number" id="programacion" name="programacion" min="0" max="10">
+            <input type="number" id="programacion" name="programacion" min="0" max="10" required>
 
             
             <input type="submit" value="Enviar">
-        </form>
+        </form>        
+        <a href="../../controller/logOutController.php">Cerrar Sesión</a>
     </div>
-
+    
 </body>
 
 </html>

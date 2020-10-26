@@ -26,11 +26,14 @@ class NoteDAO {
             $sentencia2->execute();            
         }else{
             
-            $sentencia3 = $this->pdo->prepare("UPDATE notas SET nota={$notaMates} where id_alumno= {$id_alumno};
-            UPDATE notas SET nota={$notaFisica} where id_alumno={$id_alumno};
-            UPDATE notas SET nota={$notaProgramacion} where id_alumno={$id_alumno};");           
-           
+            $sentencia3 = $this->pdo->prepare("UPDATE notas SET nota={$notaMates} where id_alumno= {$id_alumno} AND `nombre_de_asignatura`='mates';");
+            $sentencia4 =  $this->pdo->prepare("UPDATE notas SET nota={$notaFisica} where id_alumno={$id_alumno} AND `nombre_de_asignatura`='fisica';");
+            $sentencia5 = $this->pdo->prepare("UPDATE notas SET nota={$notaProgramacion} where id_alumno={$id_alumno} AND `nombre_de_asignatura`='programacion';");
+            
             $sentencia3->execute();
+            $sentencia4->execute();
+            $sentencia5->execute();             
+           
 
         }
         return false;                   

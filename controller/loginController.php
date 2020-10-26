@@ -6,7 +6,7 @@ require_once '../model/personDAO.php';
 if (isset($_POST['email'])) {
     //OJO!! poner md5 en password
     //$admin = new Administrator($_POST['email'], md5($_POST['psswd']));
-    $admin = new Administrator($_POST['email'], $_POST['psswd']);
+    $admin = new Administrator($_POST['email'], md5($_POST['psswd']));
     $adminDAO = new PersonDAO();
     echo 'entrado';
     if($adminDAO->login($admin)){
