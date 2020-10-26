@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2020 at 08:59 PM
+-- Generation Time: Oct 26, 2020 at 11:38 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -65,8 +65,7 @@ CREATE TABLE `alumnos` (
 
 INSERT INTO `alumnos` (`id`, `nombre`, `apellido paterno`, `apellido materno`, `grupo`, `email`, `passwd`) VALUES
 (1, 'david', 'mesas', 'del rio', 'daw2', 'david@gmail.com', '1234'),
-(2, 'Jordi', 'mesas', 'del rio', 'daw2', 'jordi_mr90@hotmail.com', '1234'),
-(3, 'Perico', 'de los', 'Palotes', 'daw2', 'perico@gmail.com', '1234');
+(2, 'Jordi', 'mesas', 'del rio', 'daw2', 'jordi_mr90@hotmail.com', '1234');
 
 -- --------------------------------------------------------
 
@@ -86,9 +85,12 @@ CREATE TABLE `notas` (
 --
 
 INSERT INTO `notas` (`id`, `nombre_de_asignatura`, `id_alumno`, `nota`) VALUES
-(1, 'mates', 1, 6),
-(2, 'fisica', 1, 7),
-(3, 'programacion', 1, 8);
+(1, 'mates', 1, 4),
+(2, 'fisica', 1, 4),
+(3, 'programacion', 1, 4),
+(7, 'mates', 2, 8),
+(8, 'fisica', 2, 8),
+(9, 'programacion', 2, 8);
 
 --
 -- Indexes for dumped tables
@@ -127,13 +129,13 @@ ALTER TABLE `administrador`
 -- AUTO_INCREMENT for table `alumnos`
 --
 ALTER TABLE `alumnos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `notas`
 --
 ALTER TABLE `notas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
@@ -143,7 +145,7 @@ ALTER TABLE `notas`
 -- Constraints for table `notas`
 --
 ALTER TABLE `notas`
-  ADD CONSTRAINT `fk_alumno` FOREIGN KEY (`id_alumno`) REFERENCES `alumnos` (`id`);
+  ADD CONSTRAINT `fk_alumno` FOREIGN KEY (`id_alumno`) REFERENCES `alumnos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
