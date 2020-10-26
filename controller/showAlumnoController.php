@@ -13,7 +13,7 @@ require_once '../../model/alumnoDAO.php';
         echo "<td>{$alumno['apellido materno']}</td> "; 
                                     
         echo "<td><a href='../../controller/infoUsuarioController.php?id_persona=$id'>Modificar</a></td> ";
-        echo "<td><a href='eliminarUsuario.php?id_persona=$id'>Eliminar</a></td>\n";
+        echo "<td><a href='../../controller/eliminarUsuarioController.php?id_persona=$id'>Eliminar</a></td>\n";
         echo "</tr>";
                             
     }

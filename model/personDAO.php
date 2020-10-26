@@ -61,7 +61,29 @@ class PersonDAO {
         session_start();
         $_SESSION['infoAlumno'] = $idAlumno;     
         
-    }  
+    } 
+    
+    public function deleteUser($id){
+        try{
+            $this->pdo->beginTransaction(); 
+
+            $id=$_GET['id_persona'];
+
+            $query1 = "DELETE FROM alumnos  where id=?";
+            $sentencia1 = $this->pdo->prepare($query1);            
+            $sentencia1->bindParam(1,$id);    
+            $sentencia1->execute();           
+           
+            $this->pdo->commit();           
+        
+        }
+        catch (Exception $ex) {
+            /* Reconocer un error y revertir los cambios */
+            $this->pdo->rollback();
+            echo $ex->getMessage();   
+        }
+        
+    }
     
 }
 
