@@ -5,28 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>crear alumne</title>
-    <style>
-    .column_left {
-
-        padding: 0 40%;
-    }
-
-    label,
-    input {
-        display: block;
-        padding: 5px;
-    }
-
-    input[type="submit"] {
-        margin-top: 5px;
-    }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
+    
 </head>
 
 <body>
-    <div class="row">
+    <div class="rowInsertAlumn">
         <div class="column_left">
-            <a href="zona.admin.php">Home</a>
+            <a href="home.php">Home</a>
             <h2 style="text-align: left; margin: 5%">Crear alumno</h2>
             <div class="form" style="margin:5%;">
                 <form action="../../controller/insertAlumnoController.php" method="POST">

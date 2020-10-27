@@ -6,6 +6,6 @@
  $alumno = new PersonDAO();
  $alumno->deleteUser($id);
 
- header('Location: ../public/view/zona.admin.php');
+ header('Location: ../public/view/home.php');
 
 ?>

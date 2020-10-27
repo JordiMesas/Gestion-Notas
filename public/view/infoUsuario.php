@@ -4,27 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-    .bold {
-        font-weight: bold;
-    }
-
-    .row{
-        text-align: left;
-        margin: 5%;
-    }
-
-    label,
-    input {
-        display: block;
-        padding: 5px;
-    }
-
-    input[type="submit"]{
-        margin-top: 7px;
-    }
-    </style>
     <title>Update</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -35,8 +16,8 @@ require_once '../../controller/sessions/sessionInfoAlumno.php';
 
 ?>
 
-    <div class="row">
-        <a href="zona.admin.php">home</a>
+    <div class="rowInfoUser">
+        <a href="home.php">home</a>
         <div>
             <h2>Datos del alumno</h2>
 
@@ -45,19 +26,19 @@ require_once '../../controller/sessions/sessionInfoAlumno.php';
                 <ul>
                     <li><?php echo $alumno['nombre']; ?></li>
                 </ul>
-                <li class="bold">primer apellido</li>
+                <li class="bold">primer apellido:</li>
                 <ul>
                     <li><?php echo $alumno['apellido paterno']; ?></li>
                 </ul>
-                <li class="bold">segundo apellido</li>
+                <li class="bold">segundo apellido:</li>
                 <ul>
                     <li><?php echo $alumno['apellido materno']; ?></li>
                 </ul>
-                <li class="bold">grupo</li>
+                <li class="bold">grupo:</li>
                 <ul>
                     <li><?php echo $alumno['grupo']; ?></li>
                 </ul>
-                <li class="bold">email</li>
+                <li class="bold">email:</li>
                 <ul>
                     <li><?php echo $alumno['email']; ?></li>
                 </ul>

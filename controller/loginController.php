@@ -1,6 +1,6 @@
 <?php
 
-require_once '../model/administrador.php';
+require_once '../model/administrator.php';
 require_once '../model/personDAO.php';
 
 if (isset($_POST['email'])) {
@@ -13,7 +13,7 @@ if (isset($_POST['email'])) {
         echo 'perfect';
         // establecer sesiones
         // redirección a ebook.admin.php
-        header('Location: ../public/view/zona.admin.php');
+        header('Location: ../public/view/home.php');
     }else {
         header('Location: ../public/view/login.php');
     }

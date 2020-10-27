@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    font-weight: bold;
+    color: red;
+    text-decoration: none;
+}
+
+a:hover{
+    color: rgb(0, 0, 0);    
+}
+
+/*home view*/
+
+.rowHome,
+.rowHome form,
+.rowHome table,
+.rowHome a,
+.rowHome h2 {
+	padding: 5%;
+}
+
+.rowHome table {
+    margin: auto;
+    margin-bottom: 2%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 80%;
+}
+
+.rowHome table:hover{
+    border: 1px solid rgba(255, 195, 195, 0.76);
+    transform:  rotateY(0deg);    
+    animation: rotateImg 5s ease-in-out reverse;
+    
+}
+
+@keyframes rotateImg{
+    0%   {transform:  rotateY(360deg);}   
+    
+    100% {transform:  rotateY(0deg);}
+}
+
+.rowHome table th,
+.rowHome table td{
+    text-align: center;
+    padding: 10px;
+}
+
+.rowHome table th{
+   
+    background-color: rgba(255, 195, 195, 0.76);
+}
+
+.rowHome table td{
+    background-color: rgba(127, 255, 212, 0.726);
+}
+
+i{
+    font-size: 20px;
+}
+
+
+/* insertAlumn view */
+
+.rowInsertAlumn .column_left {
+	padding: 0 40%;
+}
+
+.rowInsertAlumn label,
+.rowInsertAlumn input {
+	display: block;
+	padding: 5px;
+}
+
+.rowInsertAlumn input[type='submit'] {
+	margin-top: 5px;
+}
+
+/*InfoUser view*/
+
+.rowInfoUser{
+	
+	margin: 5%;
+}
+
+.rowInfoUser h2, .rowInfoUser ul, .rowInfoUser li{
+    margin: 2%;
+}
+
+.rowInfoUser .bold {
+	font-weight: bold;
+}
+
+.rowInfoUser label,
+.rowInfoUser input {
+	
+	padding: 5px;
+}
+
+.rowInfoUser input[type='submit'] {
+	margin: 7px 0;
+}
+
+/*infoMedia average*/
+
+.rowMedia{
+    margin: 5%;
+}
+
+.rowMedia h3, .rowMedia ul, .rowMedia li, .rowMedia p{
+    margin: 2%;
+}
