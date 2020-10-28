@@ -27,27 +27,29 @@ a:hover{
     margin: auto;
     margin-bottom: 2%;
     border-collapse: collapse;
-    border-spacing: 0;
-    width: 80%;
+    border-spacing: 0;    
+    width: 80%;    
 }
-
+/**** start animation****/
 .rowHome table:hover{
-    border: 1px solid rgba(255, 195, 195, 0.76);
+   
     transform:  rotateY(0deg);    
-    animation: rotateImg 5s ease-in-out reverse;
+    animation: rotateImg 4s ease-in-out reverse;
     
 }
 
 @keyframes rotateImg{
-    0%   {transform:  rotateY(360deg);}   
+    0%   {transform:  rotateX(360deg);}   
     
-    100% {transform:  rotateY(0deg);}
+    100% {transform:  rotateX(0deg);}
 }
+/**** finished animation****/
+
 
 .rowHome table th,
 .rowHome table td{
     text-align: center;
-    padding: 10px;
+    padding: 10px;    
 }
 
 .rowHome table th{

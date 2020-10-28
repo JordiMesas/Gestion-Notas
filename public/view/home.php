@@ -61,6 +61,9 @@
         <a href="infoMediaAlumno.php">Información de las notas medias del alumnado</a>
 
         <a href="../../controller/logOutController.php">Cerrar Sesión</a>
+
+        <a href="refresh.php">Cargar la página</a>
+
     </div>
 
 </body>

@@ -8,8 +8,8 @@ class AlumnoDAO {
         require_once '../../services/connection.php';
         $this->pdo=$pdo;
     }   
-    //Funcion para seleccionar base datos alumnos
-    public function showAlumno(){
+    //Funcion para seleccionar base datos alumnos y mostrar en home informacion del alumnado
+    public function showAlumno(){       
         
         $query = "SELECT * FROM alumnos ";
         $sentencia=$this->pdo->prepare($query);
@@ -18,8 +18,21 @@ class AlumnoDAO {
         // coge las filas en forma de array
         return $sentencia->fetchAll(PDO::FETCH_ASSOC);     
         
-    }       
+    } 
+    //funcion para filtrar alumno
+    public function filtrarAlumno($alumno){       
 
+            $nombre = $alumno->getNombre();
+            $primerApellido = $alumno->getPrimerApellido();
+            $query = "SELECT id,nombre,`apellido paterno` FROM alumnos WHERE nombre LIKE '%{$nombre}%' AND `apellido paterno` LIKE '%{$primerApellido}%'";
+            $sentencia=$this->pdo->prepare($query);
+            $sentencia->execute();
+             // coge las filas en forma de array
+            return $sentencia->fetchAll(PDO::FETCH_ASSOC);    
+            
+    }
+
+    /*******Funciones para calcular nota media de alumnos de cada asignatura, mates, fisica, programacion *******/
     public function notaMediaMates(){       
        
         $data = $this->pdo->query("SELECT AVG(nota)  FROM notas WHERE nombre_de_asignatura = 'mates'")->fetch();        
@@ -44,6 +57,8 @@ class AlumnoDAO {
         return Alumno::$nota_media_programacion;
     }
 
+    /********Te devuelve la asignatura que tiene la mayor media *********/
+
     public function notaMayorMateria($notaMates, $notaFisica, $notaProgramacion){
         $result = max($notaMates,$notaFisica,$notaProgramacion);
         switch ($result) {
@@ -61,6 +76,8 @@ class AlumnoDAO {
                 break;
         }
     }
+
+      /********devuelve el alumno que ha sacado mejor nota de cada asignatura*********/
 
     public function nombreAlumnoMejorNotaMates(){
         

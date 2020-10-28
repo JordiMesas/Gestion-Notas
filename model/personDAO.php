@@ -31,7 +31,7 @@ class PersonDAO {
         }
     }
     
-    //Funcion para insertar alumnos
+    //Funcion para Crear los alumnos
     public function insertAlumno($alumn){
         $sentencia1=$this->pdo->prepare("INSERT INTO `alumnos` (`id`,`nombre`, `apellido paterno`, `apellido materno`, `grupo`,`email`,`passwd`) VALUES (NULL,?,?,?,?,?,?);");
         $nombre= $alumn->getNombre(); 
@@ -49,7 +49,7 @@ class PersonDAO {
 
         $sentencia1->execute();
     }
-    
+    // funcion para identificar y mostrar la informacion en la vista infoUsuario
     public function showFormAlumno($id){
         
         $query = "SELECT * FROM alumnos WHERE id=$id";
@@ -62,7 +62,7 @@ class PersonDAO {
         $_SESSION['infoAlumno'] = $idAlumno;     
         
     } 
-    
+    //Funcions que sirve para eliminar la informacion del alumno y sus notas 
     public function deleteUser($id){
         try{
             $this->pdo->beginTransaction(); 

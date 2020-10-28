@@ -12,7 +12,7 @@ class Alumno extends Person{
     public static $nota_media_programacion;
     
     function __construct(){      
-       
+      
     }  
 
     /**
