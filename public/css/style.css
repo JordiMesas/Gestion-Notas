@@ -31,7 +31,7 @@ a:hover{
     width: 80%;    
 }
 /**** start animation****/
-.rowHome table:hover{
+/* .rowHome table:hover{
    
     transform:  rotateY(0deg);    
     animation: rotateImg 4s ease-in-out reverse;
@@ -42,7 +42,7 @@ a:hover{
     0%   {transform:  rotateX(360deg);}   
     
     100% {transform:  rotateX(0deg);}
-}
+} */
 /**** finished animation****/
 
 

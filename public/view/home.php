@@ -62,7 +62,7 @@
 
         <a href="../../controller/logOutController.php">Cerrar Sesión</a>
 
-        <a href="refresh.php">Cargar la página</a>
+        <a href="refresh.php">Ver todos los usuarios</a>
 
     </div>
 

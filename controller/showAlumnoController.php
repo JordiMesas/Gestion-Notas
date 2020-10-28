@@ -9,36 +9,24 @@ require_once '../../model/alumnoDAO.php';
             
         $alumno->setNombre($_POST['nombre']);
         $alumno->setPrimerApellido($_POST['primerApellido']);
-
-        foreach($alumnoDao->filtrarAlumno($alumno)  as $alumno){
-            echo "<tr>";
-            $id = $alumno['id'];
-               
-            echo "<td>{$alumno['nombre']}</td>";
-            echo "<td>{$alumno['apellido paterno']}</td>";   
-            echo "<td></td> "; 
-                                        
-            echo "<td><a href='../../controller/infoUsuarioController.php?id_persona=$id'>Modificar</a></td> ";
-            echo "<td><a href='../../controller/deleteUserController.php?id_persona=$id'>Eliminar</a></td>";
-            echo "</tr>";
-                                
-        }       
+        $filter = $alumnoDao->filtrarAlumno($alumno);        
         
     }else{      
         
-        foreach($alumnoDao->showAlumno()  as $alumno){
-            echo "<tr>";
-            $id = $alumno['id'];
-               
-            echo "<td>{$alumno['nombre']}</td>";
-            echo "<td>{$alumno['apellido paterno']}</td>";   
-            echo "<td>{$alumno['apellido materno']}</td> "; 
-                                        
-            echo "<td><a href='../../controller/infoUsuarioController.php?id_persona=$id'>Modificar</a></td> ";
-            echo "<td><a href='../../controller/deleteUserController.php?id_persona=$id'>Eliminar</a></td>";
-            echo "</tr>";
-        }
+        $filter = $alumnoDao->showAlumno();
         
+    }
+    foreach($filter  as $alumno){
+        echo "<tr>";
+        $id = $alumno['id'];
+           
+        echo "<td>{$alumno['nombre']}</td>";
+        echo "<td>{$alumno['apellido paterno']}</td>";   
+        echo "<td>{$alumno['apellido materno']}</td> "; 
+                                    
+        echo "<td><a href='../../controller/infoUsuarioController.php?id_persona=$id'>Modificar</a></td> ";
+        echo "<td><a href='../../controller/deleteUserController.php?id_persona=$id'>Eliminar</a></td>";
+        echo "</tr>";
     }
 
 ?>

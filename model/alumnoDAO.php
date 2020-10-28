@@ -24,7 +24,7 @@ class AlumnoDAO {
 
             $nombre = $alumno->getNombre();
             $primerApellido = $alumno->getPrimerApellido();
-            $query = "SELECT id,nombre,`apellido paterno` FROM alumnos WHERE nombre LIKE '%{$nombre}%' AND `apellido paterno` LIKE '%{$primerApellido}%'";
+            $query = "SELECT * FROM alumnos WHERE nombre LIKE '%{$nombre}%' AND `apellido paterno` LIKE '%{$primerApellido}%'";
             $sentencia=$this->pdo->prepare($query);
             $sentencia->execute();
              // coge las filas en forma de array
