@@ -7,9 +7,7 @@ class Alumno extends Person{
     private $primerApellido;
     private $segundoApellido;
     private $grupo;
-    public static $nota_media_mates;
-    public static $nota_media_fisica;
-    public static $nota_media_programacion;
+    public static $nota_media;   
     
     function __construct(){      
       

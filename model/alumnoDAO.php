@@ -36,25 +36,25 @@ class AlumnoDAO {
     public function notaMediaMates(){       
        
         $data = $this->pdo->query("SELECT AVG(nota)  FROM notas WHERE nombre_de_asignatura = 'mates'")->fetch();        
-        Alumno::$nota_media_mates = $data[0];
+        Alumno::$nota_media = $data[0];
         
-        return Alumno::$nota_media_mates;
+        return Alumno::$nota_media;
     }
 
     public function notaMediaFisica(){       
        
         $data = $this->pdo->query("SELECT AVG(nota)  FROM notas WHERE nombre_de_asignatura = 'fisica'")->fetch();        
-        Alumno::$nota_media_fisica = $data[0];
+        Alumno::$nota_media = $data[0];
         
-        return Alumno::$nota_media_fisica;
+        return Alumno::$nota_media;
     }
 
     public function notaMediaProgramacion(){       
        
         $data = $this->pdo->query("SELECT AVG(nota)  FROM notas WHERE nombre_de_asignatura = 'programacion'")->fetch();        
-        Alumno::$nota_media_programacion = $data[0];
+        Alumno::$nota_media= $data[0];
         
-        return Alumno::$nota_media_programacion;
+        return Alumno::$nota_media;
     }
 
     /********Te devuelve la asignatura que tiene la mayor media *********/

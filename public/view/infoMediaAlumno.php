@@ -25,7 +25,7 @@
                 Media de Mates
             </li>
             <ul>
-                <li><?php  echo $alumnodao->notaMediaMates();  ?></li>
+                <li><?php echo $alumnodao->notaMediaMates();  ?></li>
 
             </ul>
             <li>
