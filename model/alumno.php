@@ -7,14 +7,10 @@ class Alumno extends Person{
     private $primerApellido;
     private $segundoApellido;
     private $grupo;
-
+    public static $nota_media;   
+    
     function __construct(){      
-        // $this->nombre=$nombre;
-        // $this->primerApellido=$primerApellido;
-        // $this->segundoApellido=$segundoApellido;
-        // $this->grupo=$grupo;      
-
-        // parent:: __construct($email,$passwd);
+      
     }  
 
     /**

@@ -12,7 +12,7 @@
 
 <div class="row">
   <div class="column left">
-    <h2 style="text-align: left; margin: 5%">Crear alumno</h2>
+    <h2 style="text-align: left; margin: 5%">Login</h2>
     <div class="form" style="margin:5%;">
         <form action="../../controller/loginController.php" method="POST" id="submit" onsubmit="return validacionForm()">
           <label for="email">Usuario</label>

@@ -17,6 +17,6 @@ if (isset($_POST['nombre'])) {
     $alumnDAO->insertAlumno($alumn);
 }
 
-header('Location: ../public/view/zona.admin.php');
+header('Location: ../public/view/home.php');
 
 ?>
